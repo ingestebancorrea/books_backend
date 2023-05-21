@@ -3,4 +3,5 @@ export interface Reseña {
     comentario: string;
     fecha: Date;
     image_url: string;
+    valoracion: string;
 }

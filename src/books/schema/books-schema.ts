@@ -27,6 +27,9 @@ export class Book {
 
    @Prop()
    tipos_interes: string;
+
+   @Prop()
+   valoracion_libro: number;
 }
 
 export const BookSchema = SchemaFactory.createForClass(Book);

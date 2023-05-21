@@ -29,8 +29,8 @@ export class BooksController {
   @ApiNotFoundResponse({ description: ErrorMessages.NOT_FOUND })
   @ApiBadRequestResponse({ description: ErrorMessages.BAD_REQUEST })
   @ApiResponse({status:500, description: ErrorMessages.APPLICATION_ERROR})
-  update(@Param('id') id: string, @Body() createReseñaDto: CreateReseñaDto) {
-    return this.booksService.update(id, createReseñaDto);
+  async addReview(@Param('id') id: string, @Body() createReseñaDto: CreateReseñaDto) {
+    return await this.booksService.addReview(id, createReseñaDto);
   }
 
   @ApiNotFoundResponse({ description: ErrorMessages.NOT_FOUND })

@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString } from "class-validator";
+import { IsDate, IsString } from "class-validator";
 
 export class CreateReseñaDto {
     @ApiProperty({
@@ -20,8 +20,8 @@ export class CreateReseñaDto {
         type: String,
         description: 'This is a required property',
     })
-    @IsString()
-    fecha: string;
+    @IsDate()
+    fecha: Date;
 
     @ApiProperty({
         type: String,
@@ -29,4 +29,12 @@ export class CreateReseñaDto {
     })
     @IsString()
     image_url: string;
+
+    @ApiProperty({
+        type: String,
+        description: 'This is a required property',
+    })
+    @IsString()
+    valoracion: string;
+
 }
